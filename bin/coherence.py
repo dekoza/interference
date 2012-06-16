@@ -270,6 +270,7 @@ if __name__ == '__main__':
         print traceback.format_exc()
 
     config = {}
+    config['logging'] = {'level': 'info'}
 
     if options['noconfig'] != 1:
         try:
@@ -305,7 +306,7 @@ if __name__ == '__main__':
             if config.get('logging',None) == None:
                 config['logging'] = {}
             if config['logging'].get('logfile',None) == None:
-                config['logging']['level'] = 'none'
+                config['logging']['level'] = 'debug'
                 try:
                     del config['logging']['logfile']
                 except KeyError:
