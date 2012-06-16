@@ -99,7 +99,7 @@ def get_ip_address(ifname):
             return ifaceadr[0]['addr']
     import sys
     if sys.platform in ('win32','sunos5'):
-        return '127.0.0.1'
+        return ifname
 
     from os import uname
     import socket

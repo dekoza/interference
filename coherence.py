@@ -26,21 +26,22 @@ from twisted.python import usage, text
  thankfully taken from twisted.scripts._twistd_unix.py
 """
 def daemonize():
+    return 
     # See http://www.erlenstar.demon.co.uk/unix/faq_toc.html#TOC16
-    if os.fork():   # launch child and...
-        os._exit(0) # kill off parent
-    os.setsid()
-    if os.fork():   # launch child and...
-        os._exit(0) # kill off parent again.
-    os.umask(077)
-    null=os.open('/dev/null', os.O_RDWR)
-    for i in range(3):
-        try:
-            os.dup2(null, i)
-        except OSError, e:
-            if e.errno != errno.EBADF:
-                raise
-    os.close(null)
+#    if os.fork():   # launch child and...
+#        os._exit(0) # kill off parent
+#    os.setsid()
+#    if os.fork():   # launch child and...
+#        os._exit(0) # kill off parent again.
+#    os.umask(077)
+#    null=os.open('/dev/null', os.O_RDWR)
+#    for i in range(3):
+#        try:
+#            os.dup2(null, i)
+#        except OSError, e:
+#            if e.errno != errno.EBADF:
+#                raise
+#    os.close(null)
 
 """
  taken with minor adjustments from twisted.python.text.py
@@ -325,8 +326,9 @@ if __name__ == '__main__':
        use_qt or
        config.get('transcoding', 'no') == 'yes'):
         if use_qt:
-            from coherence.extern import qt4reactor
-            qt4reactor.install()
+            pass
+            #from coherence.extern import qt4reactor
+            #qt4reactor.install()
         else:
             try:
                 from twisted.internet import glib2reactor

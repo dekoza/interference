@@ -926,8 +926,8 @@ class DIDLElement(ElementInterface,log.Loggable):
                  transcoding=False):
         ElementInterface.__init__(self, 'DIDL-Lite', {})
         self.attrib['xmlns'] = 'urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/'
-        self.attrib['xmlns:dc'] = 'http://purl.org/dc/elements/1.1/'
-        self.attrib['xmlns:upnp'] = 'urn:schemas-upnp-org:metadata-1-0/upnp/'
+        #self.attrib['xmlns:dc'] = 'http://purl.org/dc/elements/1.1/'
+        #self.attrib['xmlns:upnp'] = 'urn:schemas-upnp-org:metadata-1-0/upnp/'
         self.attrib['xmlns:dlna'] = 'urn:schemas-dlna-org:metadata-1-0'
         self.attrib['xmlns:pv'] = 'http://www.pv.com/pvns/'
         self._items = []

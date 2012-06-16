@@ -19,6 +19,7 @@ from twisted.internet.protocol import DatagramProtocol
 from twisted.internet import reactor, error
 from twisted.internet import task
 from twisted.web.http import datetimeToString
+from twisted import version
 
 from coherence import log, SERVER_ID
 
@@ -40,7 +41,8 @@ class SSDPServer(DatagramProtocol, log.Loggable):
         # Create SSDP server
         self.test = test
         if self.test == False:
-            try:
+            try:                
+                print version
                 self.port = reactor.listenMulticast(SSDP_PORT, self, listenMultiple=True)
                 #self.port.setLoopbackMode(1)
 
@@ -74,6 +76,7 @@ class SSDPServer(DatagramProtocol, log.Loggable):
     def datagramReceived(self, data, (host, port)):
         """Handle a received multicast datagram."""
 
+        print "received!!!!"
         try:
             header, payload = data.split('\r\n\r\n')[:2]
         except ValueError, err:
