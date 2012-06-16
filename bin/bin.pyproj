@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{f3d337a3-cec2-4051-8544-643949c61231}</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>coherence.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>..</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>bin</Name>
+    <RootNamespace>bin</RootNamespace>
+    <IsWindowsApplication>False</IsWindowsApplication>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="coherence.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Coherence\Coherence.pyproj">
+      <Name>Coherence</Name>
+      <Project>{31219485-ff54-48a9-b37f-a6c6872dbd1f}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
+</Project>
