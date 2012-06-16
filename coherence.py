@@ -2,6 +2,7 @@
 #
 # Licensed under the MIT license
 # http://opensource.org/licenses/mit-license.php
+import coherence
 
 # Copyright 2006,2007,2008 Frank Scholz <coherence@beebits.net>
 
@@ -20,7 +21,6 @@ from coherence import __version__
 from coherence.extern.simple_config import Config,ConfigItem
 
 from twisted.python import usage, text
-
 
 """
  thankfully taken from twisted.scripts._twistd_unix.py
